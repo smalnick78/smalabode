@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home — 421 Hosea Court</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="hosea.html" class="nav-logo-simple">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" fill="none">
+          <text x="4" y="26" font-family="'DM Sans', sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="-0.3">SmaL<tspan fill="#c9a84c">Abode</tspan></text>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="hosea-utilities.html">Utilities</a></li>
+        <li><a href="hosea-wifi.html">Wi-Fi</a></li>
+        <li><a href="hosea-smarthome.html" class="active">Smart Home</a></li>
+        <li><a href="hosea-local.html">Local Guide</a></li>
+        <li><a href="hosea-appliances.html">Appliances</a></li>
+        <li><a href="hosea-hoa.html">HOA</a></li>
+        <li><a href="hosea-documents.html">Documents</a></li>
+        <li><a href="hosea-contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="hosea.html">Home</a><span>›</span><span>Smart Home</span>
+    </div>
+  </div>
+
+  <section class="hero" style="padding: 52px 0;">
+    <div class="container hero-content">
+      <span class="hero-eyebrow">Smart Home Setup</span>
+      <h1>Your <span>Smart Devices</span></h1>
+      <p>This home has a smart thermostat, smart doorbell, and smart lock. Here's everything you need to get set up.</p>
+    </div>
+  </section>
+
+  <!-- DEVICE QUICK NAV -->
+  <div style="background: var(--gray-100); border-bottom: 1px solid var(--gray-200); padding: 14px 0;">
+    <div class="container" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+      <span style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--gray-400); margin-right:4px;">Jump to:</span>
+      <a href="#thermostat" style="display:inline-flex; align-items:center; gap:7px; background:var(--warm-white); border:1px solid var(--gray-200); border-radius:999px; padding:7px 16px; font-size:0.82rem; font-weight:600; color:var(--navy); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.color='var(--navy)'">🌡️ Thermostat</a>
+      <a href="#doorbell" style="display:inline-flex; align-items:center; gap:7px; background:var(--warm-white); border:1px solid var(--gray-200); border-radius:999px; padding:7px 16px; font-size:0.82rem; font-weight:600; color:var(--navy); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.color='var(--navy)'">🔔 Doorbell</a>
+      <a href="#lock" style="display:inline-flex; align-items:center; gap:7px; background:var(--warm-white); border:1px solid var(--gray-200); border-radius:999px; padding:7px 16px; font-size:0.82rem; font-weight:600; color:var(--navy); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.color='var(--navy)'">🔐 Smart Lock</a>
+      <a href="#own-devices" style="display:inline-flex; align-items:center; gap:7px; background:var(--warm-white); border:1px solid var(--gray-200); border-radius:999px; padding:7px 16px; font-size:0.82rem; font-weight:600; color:var(--navy); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.color='var(--navy)'">➕ Your Devices</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- THERMOSTAT -->
+      <div id="thermostat" class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header">
+          <span class="icon">🌡️</span>
+          <h3>Ecobee Smart Thermostat</h3>
+        </div>
+        <div class="info-block-body">
+          <h4 style="margin-bottom:10px;">Getting Started</h4>
+          <ol style="padding-left:20px; display:flex; flex-direction:column; gap:8px; margin-bottom:22px;">
+            <li style="font-size:0.9rem; color:var(--gray-800);">Download the <strong>Ecobee app</strong> (App Store or Google Play)</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Create a free account using your own email address</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Select <strong>"Add a Thermostat"</strong> and follow the in-app instructions</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">The thermostat is already connected to Wi-Fi — no network setup needed</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">You now have full temperature control from your phone, anywhere</li>
+          </ol>
+
+          <div class="card-grid card-grid-2" style="margin-bottom:22px;">
+            <div style="background:var(--gray-100); border-radius:var(--radius); padding:16px;">
+              <p style="font-size:0.82rem; font-weight:700; color:var(--teal); margin-bottom:8px;">✅ You Control</p>
+              <ul style="padding-left:16px; font-size:0.85rem; color:var(--gray-800); line-height:1.9;">
+                <li>Day-to-day temperature settings</li>
+                <li>Heating &amp; cooling schedules</li>
+                <li>Fan settings</li>
+                <li>Vacation mode</li>
+              </ul>
+            </div>
+            <div style="background:var(--gray-100); border-radius:var(--radius); padding:16px;">
+              <p style="font-size:0.82rem; font-weight:700; color:var(--gray-400); margin-bottom:8px;">🔒 Owner-Protected</p>
+              <ul style="padding-left:16px; font-size:0.85rem; color:var(--gray-600); line-height:1.9;">
+                <li>Minimum heat (55°F)</li>
+                <li>Maximum cool (85°F)</li>
+                <li>HVAC alert settings</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-note" style="margin-bottom:20px;">
+            <span>ℹ️</span>
+            <p>Temperature limits are set by the owner to protect the HVAC system and prevent frozen pipes. They are set at levels that won't affect your normal comfort. If you have a concern, contact your Property Manager.</p>
+          </div>
+
+          <h4 style="margin-bottom:10px;">SmartSensors</h4>
+          <p style="font-size:0.875rem;">Two small Ecobee SmartSensors are placed in the living room and master bedroom. They help maintain accurate temperatures throughout the home automatically. If you see a low battery indicator, notify your Property Manager.</p>
+        </div>
+      </div>
+
+      <!-- DOORBELL -->
+      <div id="doorbell" class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header">
+          <span class="icon">🔔</span>
+          <h3>Ecobee Smart Doorbell Camera</h3>
+        </div>
+        <div class="info-block-body">
+          <p style="margin-bottom:18px;">You are the owner of this device during your tenancy. Set it up using the <strong>same Ecobee app</strong> as the thermostat — one app handles both.</p>
+
+          <h4 style="margin-bottom:10px;">Getting Started</h4>
+          <ol style="padding-left:20px; display:flex; flex-direction:column; gap:8px; margin-bottom:22px;">
+            <li style="font-size:0.9rem; color:var(--gray-800);">Open the Ecobee app and log into your account</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Select <strong>"Add a Device"</strong> and follow the instructions to register the doorbell</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">The doorbell is already connected to the property Wi-Fi — no network setup needed</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Activate your free one-year Smart Security subscription: go to <strong>Account → Subscription</strong> and enter your redemption code: <strong style="color:var(--navy);">[REDEMPTION CODE]</strong></li>
+          </ol>
+
+          <h4 style="margin-bottom:10px;">Smart Security Features</h4>
+          <ul class="rule-list" style="margin-bottom:22px;">
+            <li class="rule-item"><span class="rule-icon">📹</span><p>Live video feed of your front door from anywhere</p></li>
+            <li class="rule-item"><span class="rule-icon">🗣️</span><p>Two-way audio — talk to visitors remotely</p></li>
+            <li class="rule-item"><span class="rule-icon">🔔</span><p>Motion and doorbell notifications</p></li>
+            <li class="rule-item"><span class="rule-icon">⭐</span><p><strong>With subscription:</strong> Video clips, package detection, and 30-day video history</p></li>
+          </ul>
+
+          <div style="background:var(--gray-100); border-radius:var(--radius); padding:14px; margin-bottom:18px;">
+            <p style="font-size:0.82rem; font-weight:700; color:var(--navy); margin-bottom:4px;">After Your Free Year</p>
+            <p style="font-size:0.85rem; margin:0;">You can continue with a paid subscription to keep recording features, or use the doorbell for free with basic live view and two-way talk.</p>
+          </div>
+
+          <div class="warning-block">
+            <span>📋</span>
+            <p><strong>Move-Out:</strong> Please remove the doorbell from your Ecobee account — go to Ecobee app → Devices → select doorbell → Remove Device. Your Property Manager will handle the physical reset as part of move-out regardless.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMART LOCK -->
+      <div id="lock" class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header">
+          <span class="icon">🔐</span>
+          <h3>Schlage Smart Lock &amp; RemoteLock App</h3>
+        </div>
+        <div class="info-block-body">
+          <p style="margin-bottom:18px;">Your front door uses a Schlage Connect smart lock. Use your PIN code on the keypad or the free RemoteLock Resident app on your phone.</p>
+
+          <div style="background:var(--navy); border-radius:var(--radius); padding:20px; margin-bottom:22px; text-align:center;">
+            <p style="color:rgba(255,255,255,0.6); font-size:0.75rem; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.08em;">Your Temporary PIN Code</p>
+            <p style="color:var(--gold); font-size:2rem; font-weight:700; font-family:monospace; margin:0;">[TENANT ACCESS CODE]</p>
+            <p style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:6px;">Change this to a personal PIN using the RemoteLock app</p>
+          </div>
+
+          <h4 style="margin-bottom:10px;">RemoteLock Resident App — Free</h4>
+          <ol style="padding-left:20px; display:flex; flex-direction:column; gap:8px; margin-bottom:22px;">
+            <li style="font-size:0.9rem; color:var(--gray-800);">Download <strong>RemoteLock</strong> (App Store or Google Play)</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Create a free account with your email address</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Follow in-app instructions to link your account to your unit</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">You can now unlock your door, change your PIN, and manage guest codes</li>
+          </ol>
+
+          <h4 style="margin-bottom:10px;">Guest Access</h4>
+          <ul class="rule-list" style="margin-bottom:22px;">
+            <li class="rule-item"><span class="rule-icon">🔑</span><p><strong>Change your PIN:</strong> Set a memorable personal PIN in the RemoteLock app</p></li>
+            <li class="rule-item"><span class="rule-icon">👥</span><p><strong>Guest codes:</strong> Create temporary codes for guests, family, or service providers with expiration dates</p></li>
+            <li class="rule-item"><span class="rule-icon">🗑️</span><p><strong>Revoke access:</strong> Delete any guest code instantly through the app</p></li>
+          </ul>
+
+          <h4 style="margin-bottom:10px;">If You're Locked Out</h4>
+          <ul class="rule-list" style="margin-bottom:18px;">
+            <li class="rule-item"><span class="rule-icon">1️⃣</span><p>Try your PIN code on the keypad</p></li>
+            <li class="rule-item"><span class="rule-icon">2️⃣</span><p>Check for a low battery indicator on the lock screen</p></li>
+            <li class="rule-item"><span class="rule-icon">3️⃣</span><p>Contact your Property Manager: <strong>Midlands Property Management — 803-888-7060</strong></p></li>
+          </ul>
+
+          <div class="warning-block">
+            <span>🔋</span>
+            <p>Smart lock battery is maintained by the owner and replaced during annual inspections. If you see a low battery warning, notify your Property Manager as soon as possible.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- OWN DEVICES -->
+      <div id="own-devices" class="info-block">
+        <div class="info-block-header">
+          <span class="icon">➕</span>
+          <h3>Adding Your Own Smart Devices</h3>
+        </div>
+        <div class="info-block-body">
+          <p style="margin-bottom:16px;">You're welcome to add smart bulbs, plugs, Amazon Echo, Google Home, and similar devices.</p>
+          <ul class="rule-list">
+            <li class="rule-item"><span class="rule-icon">📶</span><p>Connect all smart home devices to <strong>DoolittleIsland</strong></p></li>
+            <li class="rule-item"><span class="rule-icon">🚫</span><p>Do not connect smart devices to LunchIsland — this can cause interference</p></li>
+            <li class="rule-item"><span class="rule-icon">🚫</span><p>Do not install additional Wi-Fi routers or network switches</p></li>
+            <li class="rule-item"><span class="rule-icon">💡</span><p>When a device asks for 2.4 GHz or 5 GHz, choose <strong>2.4 GHz</strong> and use DoolittleIsland</p></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" fill="none">
+          <text x="4" y="26" font-family="'DM Sans', sans-serif" font-size="20" font-weight="700" fill="rgba(255,255,255,0.8)" letter-spacing="-0.3">SmaL<tspan fill="#c9a84c">Abode</tspan></text>
+        </svg>
+      </div>
+      <p>421 Hosea Court, Lexington SC · Midlands Property Management · 803-888-7060</p>
+    </div>
+  </footer>
+</body>
+</html>
