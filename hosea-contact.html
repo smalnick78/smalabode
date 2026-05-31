@@ -23,6 +23,7 @@
         <li><a href="hosea-hoa.html">HOA</a></li>
         <li><a href="hosea-documents.html">Documents</a></li>
         <li><a href="hosea-contact.html" class="active">Contact</a></li>
+              <li><a href="index.html" style="color: rgba(255,255,255,0.5); font-size: 0.82rem;">Sign Out</a></li>
       </ul>
     </div>
   </nav>
@@ -61,23 +62,20 @@
             </div>
 
             <!--
-              WEB3FORMS SETUP INSTRUCTIONS:
-              1. Go to web3forms.com and enter the property manager's email to get a free Access Key
-              2. Replace "YOUR_WEB3FORMS_ACCESS_KEY" below with the Access Key
-              3. To notify multiple recipients (e.g. multiple PMs), add them in the Web3Forms dashboard
-                 under Settings → Notification Emails. No code changes needed per property.
-              4. Web3Forms is free, unlimited submissions, and supports unlimited recipient emails.
-              Note: The hidden "from_name" and "subject" fields auto-populate the email subject/sender.
+              FORMSPREE SETUP INSTRUCTIONS:
+              1. Go to formspree.io and create a free account
+              2. Create a new form and get your form endpoint URL
+              3. Replace "YOUR_FORMSPREE_ID" in the action below with your actual ID
+                 e.g. action="https://formspree.io/f/xabc1234"
+              4. In Formspree dashboard, set the notification email to midlandspm@gmail.com
+              5. Add nick@smalabode.com as a CC or BCC recipient in Formspree settings
             -->
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
 
-              <!-- Web3Forms access key -->
-              <input type="hidden" name="access_key" value="bc8093ef-baf1-44c6-9602-ca470ab12b58">
-              <input type="hidden" name="subject" value="SmalAbode — Tenant Message: 421 Hosea Court">
-              <input type="hidden" name="from_name" value="SmalAbode Tenant Portal">
+              <!-- Hidden fields for routing and identification -->
+              <input type="hidden" name="_subject" value="SmalAbode — Tenant Message: 421 Hosea Court">
+              <input type="hidden" name="_cc" value="nick@smalabode.com">
               <input type="hidden" name="property" value="421 Hosea Court, Lexington SC">
-              <!-- Redirect to same page after submission (handled by JS below) -->
-              <input type="hidden" name="redirect" value="false">
 
               <div class="form-group">
                 <label for="name">Your Name *</label>
@@ -188,22 +186,13 @@
       btn.disabled = true;
 
       try {
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch(form.action, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: json
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
         });
 
-        const result = await response.json();
-
-        if (response.ok && result.success) {
+        if (response.ok) {
           form.style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
         } else {
