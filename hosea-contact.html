@@ -21,8 +21,8 @@
         <li><a href="hosea-local.html">Local Guide</a></li>
         <li><a href="hosea-appliances.html">Appliances</a></li>
         <li><a href="hosea-hoa.html">HOA</a></li>
+        <li><a href="hosea-documents.html">Documents</a></li>
         <li><a href="hosea-contact.html" class="active">Contact</a></li>
-              <li><a href="index.html">Sign Out</a></li>
       </ul>
     </div>
   </nav>
@@ -37,7 +37,7 @@
     <div class="container hero-content">
       <span class="hero-eyebrow">Get in Touch</span>
       <h1>Contact &amp; <span>Requests</span></h1>
-      <p>Use the form below for maintenance requests, questions, or any other inquiry. Your message will be sent to your Property Manager with a copy to the owner.</p>
+      <p>Use the form below for maintenance requests, questions, or any other inquiry. Messages are automatically routed to the right person based on your request type.</p>
     </div>
   </section>
 
@@ -57,24 +57,39 @@
             <div id="formSuccess" style="display:none; background:#e8f5e9; border:1px solid #a5d6a7; border-radius:var(--radius); padding:20px; text-align:center; margin-bottom:20px;">
               <p style="font-size:1.1rem; margin-bottom:4px;">✅</p>
               <p style="font-weight:700; color:#2e7d32; margin-bottom:4px;">Message Sent!</p>
-              <p style="font-size:0.875rem; color:#388e3c; margin:0;">Your Property Manager will be in touch shortly.</p>
+              <p style="font-size:0.875rem; color:#388e3c; margin:0;">Your message has been routed to the right person. You'll hear back shortly.</p>
             </div>
 
             <!--
-              FORMSPREE SETUP INSTRUCTIONS:
-              1. Go to formspree.io and create a free account
-              2. Create a new form and get your form endpoint URL
-              3. Replace "YOUR_FORMSPREE_ID" in the action below with your actual ID
-                 e.g. action="https://formspree.io/f/xabc1234"
-              4. In Formspree dashboard, set the notification email to midlandspm@gmail.com
-              5. Add nick@smalabode.com as a CC or BCC recipient in Formspree settings
-            -->
-            <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+              WEB3FORMS SETUP INSTRUCTIONS:
+              =====================================================
+              1. Go to web3forms.com and create TWO free accounts:
+                 Account A: register with midlandspm@gmail.com  → get Access Key A
+                 Account B: register with nick@smalabode.com    → get Access Key B
 
-              <!-- Hidden fields for routing and identification -->
-              <input type="hidden" name="_subject" value="SmalAbode — Tenant Message: 421 Hosea Court">
-              <input type="hidden" name="_cc" value="nick@smalabode.com">
+              2. Replace the placeholder values in the ROUTING CONFIG
+                 section of the script below:
+                 PM_KEY   = Access Key A (midlandspm@gmail.com)
+                 OWNER_KEY = Access Key B (nick@smalabode.com)
+
+              3. In each Web3Forms dashboard, add the other email
+                 as a CC recipient so both parties receive a copy.
+
+              ROUTING LOGIC:
+              - Maintenance, Appliance, Lease, HOA, General → PM (CC owner)
+              - Wi-Fi Issue, Smart Home Issue               → Owner (CC PM)
+              - Website Update Request                      → Owner only
+              =====================================================
+            -->
+
+            <form id="contactForm">
+
+              <!-- Hidden web3forms fields — key swapped dynamically by JS -->
+              <input type="hidden" name="access_key" id="accessKey" value="">
+              <input type="hidden" name="subject" id="emailSubject" value="SmalAbode — Tenant Message: 421 Hosea Court">
               <input type="hidden" name="property" value="421 Hosea Court, Lexington SC">
+              <!-- Honeypot spam protection -->
+              <input type="checkbox" name="botcheck" style="display:none;">
 
               <div class="form-group">
                 <label for="name">Your Name *</label>
@@ -93,7 +108,7 @@
 
               <div class="form-group">
                 <label for="category">Type of Request *</label>
-                <select id="category" name="category" required>
+                <select id="category" name="category" required onchange="updateRouting()">
                   <option value="" disabled selected>Select a category</option>
                   <option value="Maintenance Request">🔧 Maintenance Request</option>
                   <option value="Smart Home Issue">🏠 Smart Home Issue</option>
@@ -105,6 +120,9 @@
                   <option value="General Inquiry">💬 General Inquiry</option>
                 </select>
               </div>
+
+              <!-- Routing indicator — shows tenant where message is going -->
+              <div id="routingIndicator" style="display:none; margin-bottom:16px; padding:10px 14px; border-radius:var(--radius); font-size:0.82rem; font-weight:600;"></div>
 
               <div class="form-group">
                 <label for="urgency">Urgency</label>
@@ -122,18 +140,18 @@
               </div>
 
               <div style="margin-bottom:16px;">
-                <p style="font-size:0.78rem; color:var(--gray-400); margin:0;">* Required fields. Your message will be sent to Midlands Property Management with a copy to the property owner.</p>
+                <p style="font-size:0.78rem; color:var(--gray-400); margin:0;">* Required fields. Messages are routed based on your request type above.</p>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:13px;">
-                Send Message →
+              <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%; justify-content:center; padding:13px;" disabled>
+                Select a Request Type to Continue
               </button>
 
             </form>
           </div>
         </div>
 
-        <!-- SIDEBAR INFO -->
+        <!-- SIDEBAR -->
         <div style="display:flex; flex-direction:column; gap:20px;">
 
           <div class="card" style="border-top:4px solid var(--gold);">
@@ -142,6 +160,16 @@
             <p style="font-size:0.875rem; margin-bottom:14px;">For urgent issues call directly. For non-urgent requests, the contact form is preferred.</p>
             <a href="tel:8038887060" class="btn btn-navy" style="font-size:0.875rem; padding:10px 18px; width:100%; justify-content:center; margin-bottom:8px;">📞 803-888-7060</a>
             <a href="https://midlandspm.com" target="_blank" class="btn btn-teal" style="font-size:0.875rem; padding:10px 18px; width:100%; justify-content:center;">🌐 midlandspm.com</a>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-bottom:6px;">Message Routing</h4>
+            <h3 style="margin-bottom:12px;">Where Your Message Goes</h3>
+            <ul class="rule-list">
+              <li class="rule-item"><span class="rule-icon">🔧</span><p><strong>Maintenance, Appliance, Lease, HOA, General</strong> → Property Manager (owner copied)</p></li>
+              <li class="rule-item"><span class="rule-icon">📶</span><p><strong>Wi-Fi &amp; Smart Home issues</strong> → Owner directly (PM copied)</p></li>
+              <li class="rule-item"><span class="rule-icon">🌐</span><p><strong>Website updates</strong> → Owner only</p></li>
+            </ul>
           </div>
 
           <div class="card">
@@ -165,7 +193,6 @@
           </div>
 
         </div>
-
       </div>
     </div>
   </section>
@@ -177,22 +204,74 @@
   </style>
 
   <script>
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', async function(e) {
+    // =====================================================
+    // ROUTING CONFIG — Replace with your actual Web3Forms keys
+    // =====================================================
+    const PM_KEY    = 'YOUR_PM_WEB3FORMS_KEY';    // midlandspm@gmail.com account key
+    const OWNER_KEY = 'YOUR_OWNER_WEB3FORMS_KEY'; // nick@smalabode.com account key
+
+    // Category routing map
+    // 'pm'    = PM's key used, owner CC'd via PM's web3forms dashboard settings
+    // 'owner' = Owner's key used, PM CC'd via owner's web3forms dashboard settings
+    // 'owner-only' = Owner's key used, no CC
+    const ROUTING = {
+      'Maintenance Request':   { key: 'pm',         label: '📬 Sending to: Midlands Property Management (owner copied)', color: '#e8f0fb', text: '#1a2744' },
+      'Smart Home Issue':      { key: 'owner',       label: '📬 Sending to: Property Owner (PM copied)',                 color: '#e8f0fb', text: '#1a2744' },
+      'Wi-Fi Issue':           { key: 'owner',       label: '📬 Sending to: Property Owner (PM copied)',                 color: '#e8f0fb', text: '#1a2744' },
+      'Appliance Issue':       { key: 'pm',          label: '📬 Sending to: Midlands Property Management (owner copied)', color: '#e8f0fb', text: '#1a2744' },
+      'Lease Question':        { key: 'pm',          label: '📬 Sending to: Midlands Property Management (owner copied)', color: '#e8f0fb', text: '#1a2744' },
+      'HOA Question':          { key: 'pm',          label: '📬 Sending to: Midlands Property Management (owner copied)', color: '#e8f0fb', text: '#1a2744' },
+      'Website Update Request':{ key: 'owner-only',  label: '📬 Sending to: Property Owner',                             color: '#e8f0fb', text: '#1a2744' },
+      'General Inquiry':       { key: 'pm',          label: '📬 Sending to: Midlands Property Management (owner copied)', color: '#e8f0fb', text: '#1a2744' },
+    };
+
+    function updateRouting() {
+      const category = document.getElementById('category').value;
+      const route = ROUTING[category];
+      const indicator = document.getElementById('routingIndicator');
+      const submitBtn = document.getElementById('submitBtn');
+      const accessKeyInput = document.getElementById('accessKey');
+      const subjectInput = document.getElementById('emailSubject');
+
+      if (route) {
+        // Set the correct access key
+        accessKeyInput.value = route.key === 'pm' ? PM_KEY : OWNER_KEY;
+
+        // Update email subject to include category
+        subjectInput.value = `SmalAbode — ${category}: 421 Hosea Court`;
+
+        // Show routing indicator
+        indicator.style.display = 'block';
+        indicator.style.background = route.color;
+        indicator.style.color = route.text;
+        indicator.style.border = '1px solid #b8cef0';
+        indicator.textContent = route.label;
+
+        // Enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message →';
+      }
+    }
+
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
+      const btn = document.getElementById('submitBtn');
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
+      const formData = new FormData(this);
+
       try {
-        const response = await fetch(form.action, {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
+          body: formData
         });
 
-        if (response.ok) {
-          form.style.display = 'none';
+        const data = await response.json();
+
+        if (data.success) {
+          document.getElementById('contactForm').style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
         } else {
           btn.textContent = 'Send Message →';
