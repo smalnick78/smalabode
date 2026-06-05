@@ -22,7 +22,7 @@
         <li><a href="hosea-appliances.html">Appliances</a></li>
         <li><a href="hosea-hoa.html">HOA</a></li>
         <li><a href="hosea-contact.html">Contact</a></li>
-              <li><a href="index.html">Sign Out</a></li>
+        <li><a href="index.html" style="color:rgba(255,255,255,0.5);">Sign Out</a></li>
       </ul>
     </div>
   </nav>
@@ -41,47 +41,88 @@
     </div>
   </section>
 
+  <!-- JUMP NAV -->
+  <div style="background:var(--warm-white); border-bottom:1px solid var(--gray-200); overflow-x:auto;">
+    <div class="container" style="padding-top:0; padding-bottom:0;">
+      <ul style="list-style:none; display:flex; gap:0; margin:0; padding:0; white-space:nowrap;">
+        <li><a href="#dining" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🍽️ Dining</a></li>
+        <li><a href="#grocery" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🛒 Grocery</a></li>
+        <li><a href="#shopping" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🏪 Shopping</a></li>
+        <li><a href="#outdoor" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🌊 Outdoor</a></li>
+        <li><a href="#arts" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🎭 Arts &amp; Culture</a></li>
+        <li><a href="#schools" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🎓 Schools</a></li>
+        <li><a href="#healthcare" style="display:block; padding:14px 18px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🏥 Healthcare</a></li>
+      </ul>
+    </div>
+  </div>
+
   <section class="section">
     <div class="container">
 
-      <!-- NEIGHBORHOOD -->
-      <div class="info-block" style="margin-bottom:28px;">
-        <div class="info-block-header"><span class="icon">🏘️</span><h3>Your Neighborhood</h3></div>
-        <div class="info-block-body">
-          <div class="card-grid card-grid-3" style="gap:14px;">
-            <div class="place-card">
-              <h4>Park &amp; Greenspace</h4>
-              <p>A park and greenspace is located directly across the street — great for walks, outdoor time, and pets.</p>
-              <a href="https://maps.google.com/?q=421+Hosea+Court+Lexington+SC" target="_blank" class="place-link">📍 View on Map →</a>
-            </div>
-            <div class="place-card">
-              <h4>Guest Parking</h4>
-              <p>Guest overflow parking is available in the community. Overnight street parking is not permitted per HOA rules.</p>
-            </div>
-            <div class="place-card">
-              <h4>Pleasant Springs Community</h4>
-              <p>A well-maintained HOA community. Front lawn care is included — the HOA handles mowing, edging, and blowing.</p>
-              <a href="https://www.pmsolutionssc.com/pleasant-springs" target="_blank" class="place-link">🌐 HOA Info →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- DINING -->
-      <div class="info-block" style="margin-bottom:28px;">
+      <div id="dining" class="info-block" style="margin-bottom:28px;">
         <div class="info-block-header"><span class="icon">🍽️</span><h3>Dining &amp; Drinks</h3></div>
         <div class="info-block-body">
+
+          <h4 style="margin-bottom:12px; margin-top:4px;">Breakfast</h4>
+          <div class="card-grid card-grid-3" style="gap:14px; margin-bottom:24px;">
+            <div class="place-card">
+              <h4>Nomad Cafe Co.</h4>
+              <p>Local café with a great breakfast and coffee menu. A neighborhood favorite for a relaxed morning out.</p>
+              <a href="https://maps.google.com/?q=2664+Augusta+Hwy+Lexington+SC" target="_blank" class="place-link">📍 2664 Augusta Hwy →</a>
+            </div>
+            <div class="place-card">
+              <h4>Waffle House</h4>
+              <p>Classic American breakfast staple — reliable, quick, and open 24 hours.</p>
+              <a href="https://maps.google.com/?q=289+Charter+Oak+Rd+Lexington+SC" target="_blank" class="place-link">📍 289 Charter Oak Rd →</a>
+            </div>
+            <div class="place-card">
+              <h4>Eggs Up Grill</h4>
+              <p>Cheerful breakfast and brunch spot focused on eggs, pancakes, and fresh morning favorites.</p>
+              <a href="https://maps.google.com/?q=205+Columbia+Ave+Lexington+SC" target="_blank" class="place-link">📍 205 Columbia Ave →</a>
+            </div>
+          </div>
+
+          <h4 style="margin-bottom:12px;">Lunch</h4>
+          <div class="card-grid card-grid-3" style="gap:14px; margin-bottom:24px;">
+            <div class="place-card">
+              <h4>Corner House Deli</h4>
+              <p>Local deli with sandwiches, soups, and fresh lunch options. Great for a quick midday meal.</p>
+              <a href="https://maps.google.com/?q=259+Charter+Oak+Rd+Lexington+SC" target="_blank" class="place-link">📍 259 Charter Oak Rd →</a>
+            </div>
+            <div class="place-card">
+              <h4>Knead Pizza</h4>
+              <p>Artisan pizza made with quality ingredients. A popular local spot for lunch or an easy dinner.</p>
+              <a href="https://maps.google.com/?q=104+Scarborough+Dr+Lexington+SC" target="_blank" class="place-link">📍 104 Scarborough Dr →</a>
+            </div>
+            <div class="place-card">
+              <h4>Granny and Papaws Southern Kitchen &amp; BBQ</h4>
+              <p>Authentic Southern comfort food and BBQ. Generous portions and true home-cooked flavor.</p>
+              <a href="https://maps.google.com/?q=2508+Augusta+Hwy+Lexington+SC" target="_blank" class="place-link">📍 2508 Augusta Hwy →</a>
+            </div>
+          </div>
+
+          <h4 style="margin-bottom:12px;">Dinner</h4>
+          <div class="card-grid card-grid-3" style="gap:14px; margin-bottom:24px;">
+            <div class="place-card">
+              <h4>The Root Cellar</h4>
+              <p>Locally beloved restaurant in downtown Lexington with a creative menu and a warm, relaxed atmosphere.</p>
+              <a href="https://maps.google.com/?q=420+Columbia+Ave+Lexington+SC" target="_blank" class="place-link">📍 420 Columbia Ave →</a>
+            </div>
+            <div class="place-card">
+              <h4>Libby's</h4>
+              <p>Casual American dining right in downtown. A go-to for locals looking for a satisfying dinner out.</p>
+              <a href="https://maps.google.com/?q=116+W+Main+St+Lexington+SC" target="_blank" class="place-link">📍 116 W Main St →</a>
+            </div>
+            <div class="place-card">
+              <h4>Flight Deck Restaurant</h4>
+              <p>Relaxed neighborhood restaurant and bar. Good food in a casual setting near the lake corridor.</p>
+              <a href="https://maps.google.com/?q=109+Old+Chapin+Rd+Lexington+SC" target="_blank" class="place-link">📍 109 Old Chapin Rd →</a>
+            </div>
+          </div>
+
+          <h4 style="margin-bottom:12px;">Craft Beer &amp; More</h4>
           <div class="card-grid card-grid-3" style="gap:14px;">
-            <div class="place-card">
-              <h4>Private Property Restaurant</h4>
-              <p>Upscale Southern and Cajun dining in a historic home downtown. A local favorite for special occasions.</p>
-              <a href="https://maps.google.com/?q=Private+Property+Restaurant+Lexington+SC" target="_blank" class="place-link">📍 Get Directions →</a>
-            </div>
-            <div class="place-card">
-              <h4>Creekside Restaurant</h4>
-              <p>Casual American fare in a converted old mill setting. Family-friendly with local comfort food.</p>
-              <a href="https://maps.google.com/?q=Creekside+Restaurant+Lexington+SC" target="_blank" class="place-link">📍 Get Directions →</a>
-            </div>
             <div class="place-card">
               <h4>Hazelwood Brewing Company</h4>
               <p>Local craft brewery with a relaxed taproom atmosphere and rotating beer selections.</p>
@@ -93,11 +134,6 @@
               <a href="https://maps.google.com/?q=Angry+Fish+Brewing+Lexington+SC" target="_blank" class="place-link">📍 Get Directions →</a>
             </div>
             <div class="place-card">
-              <h4>Downtown Lexington</h4>
-              <p>Main Street features independently owned restaurants, cafes, and shops within a short drive.</p>
-              <a href="https://maps.google.com/?q=Downtown+Lexington+SC" target="_blank" class="place-link">📍 Explore Downtown →</a>
-            </div>
-            <div class="place-card">
               <h4>Lexington Wine Walk</h4>
               <p>Popular community event in downtown Lexington. Check local events calendar for upcoming dates.</p>
               <a href="https://www.lexingtonsc.gov" target="_blank" class="place-link">🌐 Events Calendar →</a>
@@ -106,8 +142,81 @@
         </div>
       </div>
 
+      <!-- GROCERY -->
+      <div id="grocery" class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header"><span class="icon">🛒</span><h3>Grocery</h3></div>
+        <div class="info-block-body">
+          <div class="card-grid card-grid-3" style="gap:14px;">
+            <div class="place-card">
+              <h4>Lowes Foods</h4>
+              <p>Full-service grocery store with a great deli and bakery section.</p>
+              <a href="https://maps.google.com/?q=2440+Augusta+Hwy+Lexington+SC" target="_blank" class="place-link">📍 2440 Augusta Hwy →</a>
+            </div>
+            <div class="place-card">
+              <h4>Publix</h4>
+              <p>Well-known for exceptional customer service and a quality selection.</p>
+              <a href="https://maps.google.com/?q=847+US-378+Lexington+SC" target="_blank" class="place-link">📍 847 US-378 →</a>
+            </div>
+            <div class="place-card">
+              <h4>Lion Food Store</h4>
+              <p>Local neighborhood grocery store — convenient for everyday essentials.</p>
+              <a href="https://maps.google.com/?q=744+W+Main+St+Lexington+SC" target="_blank" class="place-link">📍 744B W Main St →</a>
+            </div>
+            <div class="place-card">
+              <h4>Dollar General</h4>
+              <p>Convenient for pantry staples, cleaning supplies, and household basics.</p>
+              <a href="https://maps.google.com/?q=1375+Pisgah+Church+Rd+Lexington+SC" target="_blank" class="place-link">📍 1375 Pisgah Church Rd →</a>
+            </div>
+            <div class="place-card">
+              <h4>Super Mercado</h4>
+              <p>Latin grocery market with fresh produce, meats, and specialty products.</p>
+              <a href="https://maps.google.com/?q=2361+Augusta+Hwy+Lexington+SC" target="_blank" class="place-link">📍 2361 Augusta Hwy →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOPPING -->
+      <div id="shopping" class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header"><span class="icon">🏪</span><h3>Shopping</h3></div>
+        <div class="info-block-body">
+          <div class="card-grid card-grid-3" style="gap:14px;">
+            <div class="place-card">
+              <h4>Hendrix Crossing</h4>
+              <p>Retail shopping center along US-378 with a variety of national stores and services.</p>
+              <a href="https://maps.google.com/?q=Hendrix+Crossing+Lexington+SC+US-378" target="_blank" class="place-link">📍 Get Directions →</a>
+            </div>
+            <div class="place-card">
+              <h4>Town Square</h4>
+              <p>Local shopping and dining hub in central Lexington.</p>
+              <a href="https://maps.google.com/?q=710+W+Main+St+Lexington+SC" target="_blank" class="place-link">📍 710 W Main St →</a>
+            </div>
+            <div class="place-card">
+              <h4>Downtown Lexington</h4>
+              <p>Boutique shops, local businesses, and specialty stores along Main Street.</p>
+              <a href="https://maps.google.com/?q=Main+Street+Lexington+SC" target="_blank" class="place-link">📍 Explore →</a>
+            </div>
+            <div class="place-card">
+              <h4>Target</h4>
+              <p>One-stop shopping for household goods, groceries, clothing, and electronics.</p>
+              <a href="https://maps.google.com/?q=5119+Sunset+Blvd+Lexington+SC" target="_blank" class="place-link">📍 5119 Sunset Blvd →</a>
+            </div>
+            <div class="place-card">
+              <h4>Bowers Ace Hardware</h4>
+              <p>Local hardware store for home improvement supplies, tools, and lawn &amp; garden needs.</p>
+              <a href="https://maps.google.com/?q=2028+Augusta+Hwy+Lexington+SC" target="_blank" class="place-link">📍 2028 Augusta Hwy →</a>
+            </div>
+            <div class="place-card">
+              <h4>CostLess Outlet</h4>
+              <p>Discount outlet store with a wide variety of home goods, furniture, and more.</p>
+              <a href="https://maps.google.com/?q=523+Columbia+Ave+Lexington+SC" target="_blank" class="place-link">📍 523 Columbia Ave →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- OUTDOOR -->
-      <div class="info-block" style="margin-bottom:28px;">
+      <div id="outdoor" class="info-block" style="margin-bottom:28px;">
         <div class="info-block-header"><span class="icon">🌊</span><h3>Outdoor Recreation</h3></div>
         <div class="info-block-body">
           <div class="card-grid card-grid-3" style="gap:14px;">
@@ -146,7 +255,7 @@
       </div>
 
       <!-- ARTS & ENTERTAINMENT -->
-      <div class="info-block" style="margin-bottom:28px;">
+      <div id="arts" class="info-block" style="margin-bottom:28px;">
         <div class="info-block-header"><span class="icon">🎭</span><h3>Arts, Culture &amp; Entertainment</h3></div>
         <div class="info-block-body">
           <div class="card-grid card-grid-3" style="gap:14px;">
@@ -170,10 +279,10 @@
       </div>
 
       <!-- SCHOOLS -->
-      <div class="info-block" style="margin-bottom:28px;">
+      <div id="schools" class="info-block" style="margin-bottom:28px;">
         <div class="info-block-header"><span class="icon">🎓</span><h3>Schools</h3></div>
         <div class="info-block-body">
-          <div class="card-grid card-grid-2" style="gap:14px; margin-bottom:16px;">
+          <div class="card-grid card-grid-2" style="gap:14px;">
             <div class="place-card">
               <h4>Lexington One School District</h4>
               <p>421 Hosea Court is in Lexington County School District One — one of SC's highest-performing districts. Pre-K through 12th grade.</p>
@@ -188,44 +297,25 @@
         </div>
       </div>
 
-      <!-- GROCERY & SHOPPING -->
-      <div class="info-block" style="margin-bottom:28px;">
-        <div class="info-block-header"><span class="icon">🛒</span><h3>Grocery &amp; Shopping</h3></div>
-        <div class="info-block-body">
-          <div class="card-grid card-grid-3" style="gap:14px;">
-            <div class="place-card">
-              <h4>Publix</h4>
-              <p>Multiple Publix locations nearby in the Lexington and Chapin area.</p>
-              <a href="https://maps.google.com/?q=Publix+Lexington+SC" target="_blank" class="place-link">📍 Find Nearest →</a>
-            </div>
-            <div class="place-card">
-              <h4>Walmart &amp; Target</h4>
-              <p>Both major retailers are easily accessible in the Lexington area.</p>
-              <a href="https://maps.google.com/?q=Walmart+Lexington+SC" target="_blank" class="place-link">📍 Find Nearest →</a>
-            </div>
-            <div class="place-card">
-              <h4>Downtown Lexington</h4>
-              <p>Boutique shops, local businesses, and specialty stores along Main Street.</p>
-              <a href="https://maps.google.com/?q=Main+Street+Lexington+SC" target="_blank" class="place-link">📍 Explore →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- HEALTHCARE -->
-      <div class="info-block">
+      <div id="healthcare" class="info-block">
         <div class="info-block-header"><span class="icon">🏥</span><h3>Healthcare</h3></div>
         <div class="info-block-body">
-          <div class="card-grid card-grid-2" style="gap:14px;">
+          <div class="card-grid card-grid-3" style="gap:14px;">
             <div class="place-card">
               <h4>Lexington Medical Center</h4>
               <p>Full-service hospital serving the Lexington area. Located on Hospital Drive, West Columbia — approx. 10 minutes from the property.</p>
               <a href="https://maps.google.com/?q=Lexington+Medical+Center+West+Columbia+SC" target="_blank" class="place-link">📍 Get Directions →</a>
             </div>
             <div class="place-card">
-              <h4>Urgent Care</h4>
-              <p>Multiple urgent care and walk-in clinic options throughout the Lexington and Irmo corridor for non-emergency needs.</p>
-              <a href="https://maps.google.com/?q=urgent+care+Lexington+SC" target="_blank" class="place-link">📍 Find Nearest →</a>
+              <h4>LMC Urgent Care</h4>
+              <p>Lexington Medical Center's urgent care location on Main Street — convenient for non-emergency needs.</p>
+              <a href="https://maps.google.com/?q=811+W+Main+St+Lexington+SC" target="_blank" class="place-link">📍 811 W Main St →</a>
+            </div>
+            <div class="place-card">
+              <h4>Novant Health Urgent Care</h4>
+              <p>Another convenient urgent care option along the Highway 378 corridor.</p>
+              <a href="https://maps.google.com/?q=815+Highway+378+West+Lexington+SC" target="_blank" class="place-link">📍 815 Highway 378 West →</a>
             </div>
           </div>
         </div>

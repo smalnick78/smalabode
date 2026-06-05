@@ -22,7 +22,7 @@
         <li><a href="hosea-appliances.html">Appliances</a></li>
         <li><a href="hosea-hoa.html">HOA</a></li>
         <li><a href="hosea-contact.html">Contact</a></li>
-              <li><a href="index.html">Sign Out</a></li>
+        <li><a href="index.html" style="color:rgba(255,255,255,0.5);">Sign Out</a></li>
       </ul>
     </div>
   </nav>
@@ -41,8 +41,58 @@
     </div>
   </section>
 
+  <!-- JUMP NAV -->
+  <div style="background:var(--warm-white); border-bottom:1px solid var(--gray-200);">
+    <div class="container" style="padding-top:0; padding-bottom:0;">
+      <ul style="list-style:none; display:flex; gap:0; flex-wrap:wrap; margin:0; padding:0;">
+        <li><a href="#lock" style="display:block; padding:14px 20px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🔐 Smart Lock</a></li>
+        <li><a href="#thermostat" style="display:block; padding:14px 20px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🌡️ Thermostat</a></li>
+        <li><a href="#doorbell" style="display:block; padding:14px 20px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">🔔 Doorbell</a></li>
+        <li><a href="#own-devices" style="display:block; padding:14px 20px; font-size:0.84rem; font-weight:600; color:var(--navy); border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; text-decoration:none;" onmouseover="this.style.borderBottomColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderBottomColor='transparent';this.style.color='var(--navy)'">➕ Your Devices</a></li>
+      </ul>
+    </div>
+  </div>
+
   <section class="section">
     <div class="container">
+
+      <!-- SMART LOCK — moved to top -->
+      <div id="lock" class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header">
+          <span class="icon">🔐</span>
+          <h3>Schlage Smart Lock &amp; RemoteLock App</h3>
+        </div>
+        <div class="info-block-body">
+          <p style="margin-bottom:18px;">Your front door uses a Schlage Connect smart lock. Use your PIN code on the keypad or the free RemoteLock Resident app on your phone.</p>
+
+          <h4 style="margin-bottom:10px;">RemoteLock Resident App — Free</h4>
+          <ol style="padding-left:20px; display:flex; flex-direction:column; gap:8px; margin-bottom:22px;">
+            <li style="font-size:0.9rem; color:var(--gray-800);">Download <strong>RemoteLock</strong> (App Store or Google Play)</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Create a free account with your email address</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">Follow in-app instructions to link your account to your unit</li>
+            <li style="font-size:0.9rem; color:var(--gray-800);">You can now unlock your door, change your PIN, and manage guest codes</li>
+          </ol>
+
+          <h4 style="margin-bottom:10px;">Guest Access</h4>
+          <ul class="rule-list" style="margin-bottom:22px;">
+            <li class="rule-item"><span class="rule-icon">🔑</span><p><strong>Change your PIN:</strong> Set a memorable personal PIN in the RemoteLock app</p></li>
+            <li class="rule-item"><span class="rule-icon">👥</span><p><strong>Guest codes:</strong> Create temporary codes for guests, family, or service providers with expiration dates</p></li>
+            <li class="rule-item"><span class="rule-icon">🗑️</span><p><strong>Revoke access:</strong> Delete any guest code instantly through the app</p></li>
+          </ul>
+
+          <h4 style="margin-bottom:10px;">If You're Locked Out</h4>
+          <ul class="rule-list" style="margin-bottom:18px;">
+            <li class="rule-item"><span class="rule-icon">1️⃣</span><p>Try your PIN code on the keypad</p></li>
+            <li class="rule-item"><span class="rule-icon">2️⃣</span><p>Check for a low battery indicator on the lock screen</p></li>
+            <li class="rule-item"><span class="rule-icon">3️⃣</span><p>Contact your Property Manager: <strong>Midlands Property Management — 803-888-7060</strong></p></li>
+          </ul>
+
+          <div class="warning-block">
+            <span>🔋</span>
+            <p>Smart lock battery is maintained by the owner and replaced during annual inspections. If you see a low battery warning, notify your Property Manager as soon as possible.</p>
+          </div>
+        </div>
+      </div>
 
       <!-- THERMOSTAT -->
       <div id="thermostat" class="info-block" style="margin-bottom:28px;">
@@ -127,52 +177,8 @@
         </div>
       </div>
 
-      <!-- SMART LOCK -->
-      <div id="lock" class="info-block" style="margin-bottom:28px;">
-        <div class="info-block-header">
-          <span class="icon">🔐</span>
-          <h3>Schlage Smart Lock &amp; RemoteLock App</h3>
-        </div>
-        <div class="info-block-body">
-          <p style="margin-bottom:18px;">Your front door uses a Schlage Connect smart lock. Use your PIN code on the keypad or the free RemoteLock Resident app on your phone.</p>
-
-          <div style="background:var(--navy); border-radius:var(--radius); padding:20px; margin-bottom:22px; text-align:center;">
-            <p style="color:rgba(255,255,255,0.6); font-size:0.75rem; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.08em;">Your Temporary PIN Code</p>
-            <p style="color:var(--gold); font-size:2rem; font-weight:700; font-family:monospace; margin:0;">[TENANT ACCESS CODE]</p>
-            <p style="color:rgba(255,255,255,0.5); font-size:0.78rem; margin-top:6px;">Change this to a personal PIN using the RemoteLock app</p>
-          </div>
-
-          <h4 style="margin-bottom:10px;">RemoteLock Resident App — Free</h4>
-          <ol style="padding-left:20px; display:flex; flex-direction:column; gap:8px; margin-bottom:22px;">
-            <li style="font-size:0.9rem; color:var(--gray-800);">Download <strong>RemoteLock</strong> (App Store or Google Play)</li>
-            <li style="font-size:0.9rem; color:var(--gray-800);">Create a free account with your email address</li>
-            <li style="font-size:0.9rem; color:var(--gray-800);">Follow in-app instructions to link your account to your unit</li>
-            <li style="font-size:0.9rem; color:var(--gray-800);">You can now unlock your door, change your PIN, and manage guest codes</li>
-          </ol>
-
-          <h4 style="margin-bottom:10px;">Guest Access</h4>
-          <ul class="rule-list" style="margin-bottom:22px;">
-            <li class="rule-item"><span class="rule-icon">🔑</span><p><strong>Change your PIN:</strong> Set a memorable personal PIN in the RemoteLock app</p></li>
-            <li class="rule-item"><span class="rule-icon">👥</span><p><strong>Guest codes:</strong> Create temporary codes for guests, family, or service providers with expiration dates</p></li>
-            <li class="rule-item"><span class="rule-icon">🗑️</span><p><strong>Revoke access:</strong> Delete any guest code instantly through the app</p></li>
-          </ul>
-
-          <h4 style="margin-bottom:10px;">If You're Locked Out</h4>
-          <ul class="rule-list" style="margin-bottom:18px;">
-            <li class="rule-item"><span class="rule-icon">1️⃣</span><p>Try your PIN code on the keypad</p></li>
-            <li class="rule-item"><span class="rule-icon">2️⃣</span><p>Check for a low battery indicator on the lock screen</p></li>
-            <li class="rule-item"><span class="rule-icon">3️⃣</span><p>Contact your Property Manager: <strong>Midlands Property Management — 803-888-7060</strong></p></li>
-          </ul>
-
-          <div class="warning-block">
-            <span>🔋</span>
-            <p>Smart lock battery is maintained by the owner and replaced during annual inspections. If you see a low battery warning, notify your Property Manager as soon as possible.</p>
-          </div>
-        </div>
-      </div>
-
       <!-- OWN DEVICES -->
-      <div class="info-block">
+      <div id="own-devices" class="info-block">
         <div class="info-block-header">
           <span class="icon">➕</span>
           <h3>Adding Your Own Smart Devices</h3>
