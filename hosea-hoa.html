@@ -169,5 +169,12 @@
       <p>421 Hosea Court, Lexington SC · Midlands Property Management · 803-888-7060</p>
     </div>
   </footer>
+<script>
+    // Replace this page in browser history so back button returns to login
+    history.replaceState(null, "", "index.html");
+    window.addEventListener("pageshow", function(e) {
+      if (e.persisted) { window.location.replace("index.html"); }
+    });
+  </script>
 </body>
 </html>
