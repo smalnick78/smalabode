@@ -337,36 +337,34 @@
   </footer>
   <script>
     (function() {
-      // Redirect to login if no auth flag
+      var DOMAIN = 'smalabode.com';
+
+      // If no auth flag at all, go to login
       if (!sessionStorage.getItem('smalabode_authed')) {
         window.location.replace('index.html');
         return;
       }
 
-      // Track whether the next navigation is internal (hosea pages)
-      var internalNav = false;
+      // On every load, check if we arrived here via an external referrer.
+      // document.referrer is set when the browser navigates to this page —
+      // including when the user hits the back button from an external site.
+      // It is empty or smalabode.com when navigating within the site.
+      var ref = document.referrer;
+      if (ref && ref.indexOf(DOMAIN) === -1) {
+        // Came from outside smalabode — require re-login
+        sessionStorage.removeItem('smalabode_authed');
+        window.location.replace('index.html');
+        return;
+      }
 
-      document.addEventListener('click', function(e) {
-        var link = e.target.closest('a[href]');
-        if (!link) return;
-        var href = link.getAttribute('href') || '';
-        // Sign Out clears immediately — handled by onclick on the link itself
-        // Internal: relative links to hosea pages
-        internalNav = !(/^https?:\/\//i.test(href));
-      }, true);
-
-      // When page hides, clear auth unless we're going to another hosea page
-      window.addEventListener('pagehide', function() {
-        if (!internalNav) {
-          sessionStorage.removeItem('smalabode_authed');
-        }
-        internalNav = false;
-      });
-
-      // Catch bfcache restore
+      // bfcache restore fallback
       window.addEventListener('pageshow', function(e) {
-        if (e.persisted && !sessionStorage.getItem('smalabode_authed')) {
-          window.location.replace('index.html');
+        if (e.persisted) {
+          var ref2 = document.referrer;
+          if (ref2 && ref2.indexOf(DOMAIN) === -1) {
+            sessionStorage.removeItem('smalabode_authed');
+            window.location.replace('index.html');
+          }
         }
       });
     })();
