@@ -132,36 +132,10 @@
   </footer>
   <script>
     (function() {
-      var DOMAIN = 'smalabode.com';
-
-      // If no auth flag at all, go to login
       if (!sessionStorage.getItem('smalabode_authed')) {
         window.location.replace('index.html');
         return;
       }
-
-      // On every load, check if we arrived here via an external referrer.
-      // document.referrer is set when the browser navigates to this page —
-      // including when the user hits the back button from an external site.
-      // It is empty or smalabode.com when navigating within the site.
-      var ref = document.referrer;
-      if (ref && ref.indexOf(DOMAIN) === -1) {
-        // Came from outside smalabode — require re-login
-        sessionStorage.removeItem('smalabode_authed');
-        window.location.replace('index.html');
-        return;
-      }
-
-      // bfcache restore fallback
-      window.addEventListener('pageshow', function(e) {
-        if (e.persisted) {
-          var ref2 = document.referrer;
-          if (ref2 && ref2.indexOf(DOMAIN) === -1) {
-            sessionStorage.removeItem('smalabode_authed');
-            window.location.replace('index.html');
-          }
-        }
-      });
     })();
   </script>
 </body>
