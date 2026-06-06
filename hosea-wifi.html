@@ -137,46 +137,25 @@
   </footer>
   <script>
     (function() {
-      // If no auth flag, redirect to login immediately
+      // Redirect to login if no auth flag
       if (!sessionStorage.getItem('smalabode_authed')) {
         window.location.replace('index.html');
         return;
       }
 
-      // Re-set the flag before following any internal link,
-      // so navigating within the site doesn't lose the session.
+      // Clear auth flag ONLY when navigating to an external domain
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a[href]');
         if (!link) return;
-        var href = link.getAttribute('href');
-        // Internal pages (hosea*.html or hosea.html) — re-set flag
-        if (href && href.match(/^hosea/) ) {
-          sessionStorage.setItem('smalabode_authed', '1');
-        }
-      }, true);
-
-      // When leaving this page, clear the auth flag.
-      // The click handler above will have already re-set it
-      // if the user clicked an internal link.
-      window.addEventListener('pagehide', function() {
-        // Small delay check: if flag was just re-set by an internal link click,
-        // don't clear it. We use a marker to detect this.
-        if (!sessionStorage.getItem('smalabode_internal')) {
+        var href = link.getAttribute('href') || '';
+        // External if it starts with http and isn't smalabode.com
+        var isExternal = /^https?:\/\//i.test(href) && href.indexOf('smalabode.com') === -1;
+        if (isExternal) {
           sessionStorage.removeItem('smalabode_authed');
         }
-        sessionStorage.removeItem('smalabode_internal');
-      });
-
-      document.addEventListener('click', function(e) {
-        var link = e.target.closest('a[href]');
-        if (!link) return;
-        var href = link.getAttribute('href');
-        if (href && href.match(/^hosea/)) {
-          sessionStorage.setItem('smalabode_internal', '1');
-        }
       }, true);
 
-      // If page is restored from bfcache after returning from external site
+      // bfcache restore: if flag is gone (cleared by external nav), send to login
       window.addEventListener('pageshow', function(e) {
         if (e.persisted && !sessionStorage.getItem('smalabode_authed')) {
           window.location.replace('index.html');
