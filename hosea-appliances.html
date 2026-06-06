@@ -146,17 +146,46 @@
   </footer>
   <script>
     (function() {
-      // If no auth flag in sessionStorage, send to login
-      // sessionStorage is cleared when the tab is closed, and does NOT
-      // persist across new tabs — so each new tab requires login
-      // The flag is set by index.html when redirecting to the portal
+      // If no auth flag, redirect to login immediately
       if (!sessionStorage.getItem('smalabode_authed')) {
         window.location.replace('index.html');
         return;
       }
-      // Handle bfcache: if page is restored from cache after leaving domain,
-      // the sessionStorage flag will still be set (same tab), so we also
-      // check if we're coming back via bfcache from an external referrer
+
+      // Re-set the flag before following any internal link,
+      // so navigating within the site doesn't lose the session.
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        // Internal pages (hosea*.html or hosea.html) — re-set flag
+        if (href && href.match(/^hosea/) ) {
+          sessionStorage.setItem('smalabode_authed', '1');
+        }
+      }, true);
+
+      // When leaving this page, clear the auth flag.
+      // The click handler above will have already re-set it
+      // if the user clicked an internal link.
+      window.addEventListener('pagehide', function() {
+        // Small delay check: if flag was just re-set by an internal link click,
+        // don't clear it. We use a marker to detect this.
+        if (!sessionStorage.getItem('smalabode_internal')) {
+          sessionStorage.removeItem('smalabode_authed');
+        }
+        sessionStorage.removeItem('smalabode_internal');
+      });
+
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (href && href.match(/^hosea/)) {
+          sessionStorage.setItem('smalabode_internal', '1');
+        }
+      }, true);
+
+      // If page is restored from bfcache after returning from external site
       window.addEventListener('pageshow', function(e) {
         if (e.persisted && !sessionStorage.getItem('smalabode_authed')) {
           window.location.replace('index.html');
