@@ -138,19 +138,27 @@
         return;
       }
 
-      // Clear auth flag ONLY when navigating to an external domain
+      // Track whether the next navigation is internal (hosea pages)
+      var internalNav = false;
+
       document.addEventListener('click', function(e) {
         var link = e.target.closest('a[href]');
         if (!link) return;
         var href = link.getAttribute('href') || '';
-        // External if it starts with http and isn't smalabode.com
-        var isExternal = /^https?:\/\//i.test(href) && href.indexOf('smalabode.com') === -1;
-        if (isExternal) {
-          sessionStorage.removeItem('smalabode_authed');
-        }
+        // Sign Out clears immediately — handled by onclick on the link itself
+        // Internal: relative links to hosea pages
+        internalNav = !(/^https?:\/\//i.test(href));
       }, true);
 
-      // bfcache restore: if flag is gone (cleared by external nav), send to login
+      // When page hides, clear auth unless we're going to another hosea page
+      window.addEventListener('pagehide', function() {
+        if (!internalNav) {
+          sessionStorage.removeItem('smalabode_authed');
+        }
+        internalNav = false;
+      });
+
+      // Catch bfcache restore
       window.addEventListener('pageshow', function(e) {
         if (e.persisted && !sessionStorage.getItem('smalabode_authed')) {
           window.location.replace('index.html');
