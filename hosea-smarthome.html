@@ -21,8 +21,9 @@
         <li><a href="hosea-local.html">Local Guide</a></li>
         <li><a href="hosea-appliances.html">Appliances</a></li>
         <li><a href="hosea-hoa.html">HOA</a></li>
+        <li><a href="hosea-documents.html">Move-In Guide</a></li>
         <li><a href="hosea-contact.html">Contact</a></li>
-        <li><a href="index.html" style="color:rgba(255,255,255,0.5);">Sign Out</a></li>
+        <li><a href="index.html" style="color:rgba(255,255,255,0.5);" onclick="sessionStorage.removeItem('smalabode_authed')">Sign Out</a></li>
       </ul>
     </div>
   </nav>
@@ -207,12 +208,25 @@
       <p>421 Hosea Court, Lexington SC · Midlands Property Management · 803-888-7060</p>
     </div>
   </footer>
-<script>
-    // Replace this page in browser history so back button returns to login
-    history.replaceState(null, "", "index.html");
-    window.addEventListener("pageshow", function(e) {
-      if (e.persisted) { window.location.replace("index.html"); }
-    });
+  <script>
+    (function() {
+      // If no auth flag in sessionStorage, send to login
+      // sessionStorage is cleared when the tab is closed, and does NOT
+      // persist across new tabs — so each new tab requires login
+      // The flag is set by index.html when redirecting to the portal
+      if (!sessionStorage.getItem('smalabode_authed')) {
+        window.location.replace('index.html');
+        return;
+      }
+      // Handle bfcache: if page is restored from cache after leaving domain,
+      // the sessionStorage flag will still be set (same tab), so we also
+      // check if we're coming back via bfcache from an external referrer
+      window.addEventListener('pageshow', function(e) {
+        if (e.persisted && !sessionStorage.getItem('smalabode_authed')) {
+          window.location.replace('index.html');
+        }
+      });
+    })();
   </script>
 </body>
 </html>

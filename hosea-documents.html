@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documents — 421 Hosea Court</title>
+  <title>Move-In Guide — 421 Hosea Court</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,34 +21,81 @@
         <li><a href="hosea-local.html">Local Guide</a></li>
         <li><a href="hosea-appliances.html">Appliances</a></li>
         <li><a href="hosea-hoa.html">HOA</a></li>
+        <li><a href="hosea-documents.html" class="active">Move-In Guide</a></li>
         <li><a href="hosea-contact.html">Contact</a></li>
-        <li><a href="index.html" style="color:rgba(255,255,255,0.5);">Sign Out</a></li>
+        <li><a href="index.html" style="color:rgba(255,255,255,0.5);" onclick="sessionStorage.removeItem('smalabode_authed')">Sign Out</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="breadcrumb">
     <div class="breadcrumb-inner">
-      <a href="hosea.html">Home</a><span>›</span><span>Documents</span>
+      <a href="hosea.html">Home</a><span>›</span><span>Move-In Guide</span>
     </div>
   </div>
 
   <section class="hero" style="padding: 52px 0;">
     <div class="container hero-content">
-      <span class="hero-eyebrow">Your Documents</span>
-      <h1>Lease &amp; <span>Important Documents</span></h1>
-      <p>All documents related to your tenancy at 421 Hosea Court. Download or view any document below.</p>
+      <span class="hero-eyebrow">Getting Settled</span>
+      <h1>Your <span>Move-In Guide</span></h1>
+      <p>Everything your Property Manager wants you to know before, during, and after move-in. Documents will be uploaded here as they become available.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
 
-      <!-- TENANCY DOCUMENTS -->
+      <!-- MOVE-IN CHECKLIST -->
       <div class="info-block" style="margin-bottom:28px;">
         <div class="info-block-header">
-          <span class="icon">📋</span>
-          <h3>Your Tenancy Documents</h3>
+          <span class="icon">✅</span>
+          <h3>Move-In Checklist</h3>
+        </div>
+        <div class="info-block-body">
+          <ul class="doc-list">
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">📋</span>
+                <div>
+                  <p>Move-In Condition Report</p>
+                  <span>Property condition at time of move-in — review, sign, and return to your PM within 5 days</span>
+                </div>
+              </div>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
+            </li>
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">🔑</span>
+                <div>
+                  <p>Keys &amp; Access Codes</p>
+                  <span>Summary of all access credentials provided at move-in</span>
+                </div>
+              </div>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
+            </li>
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">⚡</span>
+                <div>
+                  <p>Utility Setup Checklist</p>
+                  <span>Step-by-step guide for setting up electric, gas, water, and trash in your name</span>
+                </div>
+              </div>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- DURING YOUR STAY -->
+      <div class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header">
+          <span class="icon">🏠</span>
+          <h3>During Your Stay</h3>
         </div>
         <div class="info-block-body">
           <ul class="doc-list">
@@ -57,63 +104,109 @@
               <div class="doc-item-info">
                 <span class="doc-icon">📄</span>
                 <div>
-                  <p>Lease Agreement</p>
-                  <span>Your signed residential lease — [Lease Start Date] to [Lease End Date]</span>
+                  <p>Tenant Handbook</p>
+                  <span>Property rules, maintenance procedures, and who to call for what</span>
                 </div>
               </div>
-              <a href="#" class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px;">⬇ Download</a>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
+            </li>
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">🏘️</span>
+                <div>
+                  <p>HOA Rules Summary</p>
+                  <span>Quick-reference guide to Pleasant Springs community rules</span>
+                </div>
+              </div>
+              <a href="hosea-hoa.html" class="btn btn-teal" style="font-size:0.82rem; padding:9px 16px;">View Rules →</a>
+            </li>
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">🔧</span>
+                <div>
+                  <p>Maintenance Request Guide</p>
+                  <span>How to submit requests, what's covered, and expected response times</span>
+                </div>
+              </div>
+              <a href="hosea-contact.html" class="btn btn-teal" style="font-size:0.82rem; padding:9px 16px;">Submit Request →</a>
+            </li>
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">📅</span>
+                <div>
+                  <p>Annual Inspection Notice</p>
+                  <span>Information about your scheduled annual property inspection</span>
+                </div>
+              </div>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- MOVE-OUT -->
+      <div class="info-block" style="margin-bottom:28px;">
+        <div class="info-block-header">
+          <span class="icon">📦</span>
+          <h3>Move-Out</h3>
+        </div>
+        <div class="info-block-body">
+          <ul class="doc-list">
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">📋</span>
+                <div>
+                  <p>Move-Out Checklist</p>
+                  <span>Everything you need to do before handing back the keys — cleaning, repairs, and smart home reset steps</span>
+                </div>
+              </div>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
+            </li>
+
+            <li class="doc-item">
+              <div class="doc-item-info">
+                <span class="doc-icon">💰</span>
+                <div>
+                  <p>Security Deposit Policy</p>
+                  <span>How your deposit is held, what deductions may apply, and the return timeline</span>
+                </div>
+              </div>
+              <span class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px; opacity:0.45; cursor:default;">Coming Soon</span>
             </li>
 
             <li class="doc-item">
               <div class="doc-item-info">
                 <span class="doc-icon">🏠</span>
                 <div>
-                  <p>Smart Home &amp; Technology Addendum</p>
-                  <span>Governs your use of smart home devices, Wi-Fi, and the smart lock</span>
+                  <p>Smart Home Move-Out Instructions</p>
+                  <span>How to remove your accounts from the doorbell, thermostat, and smart lock before leaving</span>
                 </div>
               </div>
-              <a href="#" class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px;">⬇ Download</a>
-            </li>
-
-            <li class="doc-item">
-              <div class="doc-item-info">
-                <span class="doc-icon">📝</span>
-                <div>
-                  <p>Move-In Checklist</p>
-                  <span>Property condition report from your move-in date</span>
-                </div>
-              </div>
-              <a href="#" class="btn btn-navy" style="font-size:0.82rem; padding:9px 16px;">⬇ Download</a>
+              <a href="hosea-smarthome.html" class="btn btn-teal" style="font-size:0.82rem; padding:9px 16px;">Smart Home →</a>
             </li>
 
           </ul>
 
           <div class="info-note" style="margin-top:16px;">
             <span>ℹ️</span>
-            <p>Documents marked with a download button will be uploaded by your Property Manager. If a document you need is not yet available, contact <strong>Midlands Property Management — 803-888-7060</strong>.</p>
+            <p>Documents marked "Coming Soon" will be uploaded by your Property Manager. If you need something urgently, contact <strong>Midlands Property Management — 803-888-7060</strong>.</p>
           </div>
         </div>
       </div>
 
       <!-- HOA DOCUMENTS -->
-      <div class="info-block" style="margin-bottom:28px;">
+      <div class="info-block">
         <div class="info-block-header">
           <span class="icon">🏘️</span>
           <h3>HOA Documents</h3>
         </div>
         <div class="info-block-body">
           <ul class="doc-list">
-
-            <li class="doc-item">
-              <div class="doc-item-info">
-                <span class="doc-icon">📄</span>
-                <div>
-                  <p>Pleasant Springs — Association Rules</p>
-                  <span>Community rules summary — parking, pets, lawn, noise, and more</span>
-                </div>
-              </div>
-              <a href="hosea-hoa.html" class="btn btn-teal" style="font-size:0.82rem; padding:9px 16px;">View Rules →</a>
-            </li>
 
             <li class="doc-item">
               <div class="doc-item-info">
@@ -152,25 +245,6 @@
         </div>
       </div>
 
-      <!-- VIOLATION NOTICES -->
-      <div class="info-block">
-        <div class="info-block-header">
-          <span class="icon">⚠️</span>
-          <h3>HOA Violation Notices</h3>
-        </div>
-        <div class="info-block-body">
-          <div style="text-align:center; padding:32px 0;">
-            <p style="font-size:1.1rem; margin-bottom:8px; color:var(--gray-400);">✅</p>
-            <p style="font-weight:600; color:var(--navy); margin-bottom:4px;">No violation notices on file</p>
-            <p style="font-size:0.875rem;">Any HOA violation notices will appear here when uploaded by your Property Manager.</p>
-          </div>
-          <div class="warning-block">
-            <span>📋</span>
-            <p>If you receive an HOA violation notice by mail, contact your Property Manager immediately at <strong>803-888-7060</strong>. All fines from violations are the tenant's responsibility per your lease.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -184,12 +258,19 @@
       <p>421 Hosea Court, Lexington SC · Midlands Property Management · 803-888-7060</p>
     </div>
   </footer>
-<script>
-    // Replace this page in browser history so back button returns to login
-    history.replaceState(null, "", "index.html");
-    window.addEventListener("pageshow", function(e) {
-      if (e.persisted) { window.location.replace("index.html"); }
-    });
+
+  <script>
+    (function() {
+      if (!sessionStorage.getItem('smalabode_authed')) {
+        window.location.replace('index.html');
+        return;
+      }
+      window.addEventListener('pageshow', function(e) {
+        if (e.persisted && !sessionStorage.getItem('smalabode_authed')) {
+          window.location.replace('index.html');
+        }
+      });
+    })();
   </script>
 </body>
 </html>

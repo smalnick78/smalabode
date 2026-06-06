@@ -129,6 +129,7 @@
       const input = document.getElementById('accessCode').value.trim().toLowerCase();
       const error = document.getElementById('accessError');
       if (PORTALS[input]) {
+        sessionStorage.setItem('smalabode_authed', '1');
         window.location.replace(PORTALS[input]);
       } else {
         error.style.display = 'block';
