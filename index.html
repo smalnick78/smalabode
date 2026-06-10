@@ -124,15 +124,6 @@
       // Add more properties here as portfolio grows:
       // 'property2code': 'property2.html',
     };
-
-    // --- NEW BACK BUTTON SECURITY SCRIPT ---
-    // Detect if the user returned to the login page via the back button
-    window.addEventListener('pageshow', function (event) {
-      // If loaded from cache or history, clear any existing login states
-      if (event.persisted || window.performance && window.performance.navigation.type === 2) {
-        sessionStorage.removeItem('smalabode_authed');
-      }
-    });
     
     function checkCode() {
       const input = document.getElementById('accessCode').value.trim().toLowerCase();
