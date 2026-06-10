@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    (function () {
-      function verifyAccess() {
-        // If the tenant isn't authenticated, boot them back to the login page
-        if (sessionStorage.getItem('smalabode_authed') !== '1') {
-          window.location.replace('index.html'); // Change 'index.html' if your login page has a different filename
-        }
-      }
-
-      // Run check immediately on initial load
-      verifyAccess();
-
-      // Run check if they try to return to this page using the browser back button
-      window.addEventListener('pageshow', function (event) {
-        if (event.persisted) {
-          window.location.reload();
-        } else {
-          verifyAccess();
-        }
-      });
-    })();
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>421 Hosea Court — SmalAbode Tenant Portal</title>
